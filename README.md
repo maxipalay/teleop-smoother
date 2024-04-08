@@ -2,9 +2,9 @@
 
 A very simple package to smooth the output velocity of the famous `teleop_twist_keyboard`.
 
-When developing a robot, I came across the issue that the `teleop_twist_keyboard` generate sudden jumps in velocity (infinite acceleration). This causes unnecessary strain on the robot joints and generates a loud popping noise as the actuators are high-torque.
+When developing a robot, I came across the issue that the `teleop_twist_keyboard` generates sudden jumps in velocity (infinite acceleration). This causes unnecessary strain on the robot joints and generates a loud popping noise as the actuators are high-torque.
 
-This package is a simple approach at smoothing the output, effectively creating a trapezoidal profile.
+This package is a simple approach at smoothing the output, effectively creating a trapezoidal profile. The acceleration is at the maximum at all times.
 
 ## `Smoother` Node
 
@@ -20,3 +20,7 @@ Input args:
 ## Launch
 
 A simple launchfile is provided. To run just build the workspace and run `ros2 launch teleop-smoother smoother.launch.py`
+
+## TODO
+
+- Add plots that show the performance of the node compared to the raw teleop
