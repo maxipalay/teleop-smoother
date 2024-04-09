@@ -8,6 +8,8 @@ When developing a robot, I came across the issue that the `teleop_twist_keyboard
 
 This package is a simple approach at smoothing the output, effectively creating a trapezoidal profile. The acceleration is at the maximum at all times.
 
+Note: if you intend to stop the robot rapidly, I would NOT recommend this, as it introduces delays.
+
 ## Nodes
 
 The core of this package is the `Smoother` node. This node subscribes to a velocity topic, and publishes acceleration-limited velocity commands on a separate topic.
@@ -36,3 +38,9 @@ The plotting node offers two services: `/capture_data` and `/plot_data`. To plot
 - `ros2 service call /capture_data std_srvs/srv/Empty` - this will start capturing data from both topics
 - `ros2 service call /capture_data std_srvs/srv/Empty` - this will stop data capturing
 - `ros2 service call /plot_data std_srvs/srv/Empty` - this will plot the captured data
+
+# TODO
+
+- separate accel/decel control?
+- jerk control?
+- multi-axis composite acceleration control?
