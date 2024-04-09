@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'smoother = teleop_smoother.smoother:main'
+            'smoother = teleop_smoother.smoother:main',
+            'plotter = teleop_smoother.plotter:main'
         ],
     },
 )
