@@ -16,7 +16,7 @@ class Smoother(Node):
             description="Maximum angular acceleration [deg/s^2] value."))
         self.declare_parameter("loop_frequency", 50.0, descriptor=ParameterDescriptor(
             type=ParameterType.PARAMETER_DOUBLE,
-            description="Maximum acceleration [m/s^2] value."))
+            description="Loop frequency for acceleration updates (Hz)."))
         self.declare_parameter("input_vel_topic", descriptor=ParameterDescriptor(
             type=ParameterType.PARAMETER_STRING,
             description="Input topic."))
